@@ -132,6 +132,12 @@ jobs:
     name: 📦 Publish to GitHub Packages
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      packages: write
+      id-token: write
+      actions: write
     steps:
       - uses: actions/checkout@v4
         with:

@@ -1,6 +1,6 @@
 [![Support Palestine](https://raw.githubusercontent.com/Safouene1/support-palestine-banner/master/banner-support.svg)](https://github.com/Safouene1/support-palestine-banner/blob/master/Markdown-pages/Support.md)
 
-![GitHub package.json version](https://img.shields.io/github/package-json/v/mustafagenc/kurlar) ![NPM Version](https://img.shields.io/npm/v/%40mustafagenc%2Fkurlar) ![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/mustafagenc/kurlar) ![GitHub Repo stars](https://img.shields.io/github/stars/mustafagenc/kurlar)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/mustafagenc/kurlar) [![NPM Version](https://img.shields.io/npm/v/%40mustafagenc%2Fkurlar)](https://www.npmjs.com/package/kurlar) [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/mustafagenc/kurlar)](https://www.codefactor.io/repository/github/mustafagenc/kurlar) [![GitHub Repo stars](https://img.shields.io/github/stars/mustafagenc/kurlar)](https://github.com/mustafagenc/kurlar/stargazers)
 
 
 # Kurlar

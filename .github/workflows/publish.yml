@@ -42,6 +42,12 @@ jobs:
     name: 🏷️ Build & Package 
     needs: test
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      packages: write
+      id-token: write
+      actions: write
     steps:
       - name: Write Release Version 🔢
         run: |
@@ -133,11 +139,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      pages: write
       packages: write
-      id-token: write
-      actions: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -182,6 +184,8 @@ jobs:
     name: 📦 Publish to npmjs
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
     steps:
       - uses: actions/checkout@v4
         with:

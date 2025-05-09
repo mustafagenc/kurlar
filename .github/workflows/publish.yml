@@ -156,10 +156,9 @@ jobs:
         id: info
         uses: jaywcjlove/github-action-package@main
         with:
-          data: |
-            {
-              "name": "@mustafagenc/kurlar"
-            }
+          rename: "@mustafagenc/kurlar"
+
+      - run: echo "name - ${{ steps.info.outputs.name }}"
 
       - uses: actions/setup-node@v4
         with:

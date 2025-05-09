@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "biomejs.biome",
+        "steoates.autoimport",
+        "formulahendry.auto-close-tag",
+        "wix.vscode-import-cost",
+        "visualstudioexptteam.vscodeintellicode",
+        "stringham.move-ts",
+        "christian-kohler.path-intellisense",
+        "yoavbls.pretty-ts-errors",
+        "mike-co.import-sorter",
+        "pmneo.tsimporter",
+        "redhat.vscode-yaml"
+    ]
+}

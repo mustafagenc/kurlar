@@ -1,0 +1,47 @@
+{
+	"name": "kurlar",
+	"version": "1.0.0",
+	"description": "Türkiye Cumhuriyet Merkez Bankası (TCMB) tarafından yayınlanan döviz kurlarını kolayca çekmenizi sağlayan kütüphane.",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"files": ["dist"],
+	"scripts": {
+		"build": "biome format --fix && tsup",
+		"run-index": "ts-node src/index.ts",
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"test:coverage": "jest --coverage",
+		"lint": "biome lint",
+		"lint:fix": "biome lint --fix",
+		"format": "biome format",
+		"format:check": "biome format --check",
+		"format:fix": "biome format --fix"
+	},
+	"repository": "github:mustafagenc/kurlar",
+	"keywords": ["tcmb", "kurlar", "döviz"],
+	"author": {
+		"name": "Mustafa Genç",
+		"email": "eposta@mustafagenc.info",
+		"url": "https://mustafagenc.info"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/mustafagenc/kurlar/issues"
+	},
+	"homepage": "https://kurlar.vercel.app",
+	"packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/jest": "^29.5.14",
+		"jest": "^29.7.0",
+		"ts-jest": "^29.3.2",
+		"ts-node": "^10.9.2",
+		"tsup": "^8.4.0",
+		"typescript": "^5.8.3"
+	},
+	"dependencies": {
+		"axios": "^1.9.0",
+		"fast-xml-parser": "^5.2.2"
+	}
+}

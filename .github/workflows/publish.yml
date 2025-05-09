@@ -1,0 +1,208 @@
+name: Publish Package to npmjs
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+permissions:
+  contents: write
+  pages: write
+  packages: write
+  id-token: write
+  actions: write
+jobs:
+  test:
+    name: ✅ Test 
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      packages: write
+      id-token: write
+      actions: write
+    steps:
+      - name: Checkout 📑
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Use Node LTS ✨
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'node'
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install Dependencies 📦️
+        run: yarn
+
+      - name: Run Tests ✔️
+        run: yarn run test
+
+  build:
+    name: 🏷️ Build & Package 
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Write Release Version 🔢
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          echo Version: $VERSION
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Checkout 📑
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Use Node LTS ✨
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'node'
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install Dependencies 📦️
+        run: yarn
+
+      - name: Update Package Version 🔢
+        run: |
+                echo "Updating package.json version to ${VERSION}"
+                yarn version --new-version "${VERSION}" --no-git-tag-version
+
+      - name: Build 🔨
+        run: yarn run build
+
+      - name: Configure Git 🔧
+        run: |
+              git config --global user.name "github-actions"
+              git config --global user.email "github-actions@users.noreply.github.com"
+    
+      - run: |
+              git add .
+              git diff --quiet || git commit -m "Update package.json to version ${VERSION}"
+      
+      - name: Push Changes 💾
+        run: |
+             git push origin HEAD:main
+        env:
+             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Zip dist & node_modules
+        run: zip -9qry "dist.zip" "./" -i "node_modules/*" -i "dist/*"
+
+      - name: Upload dist.zip
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist.zip
+          path: dist.zip
+
+  release:
+    name: 🚀 Publish Release 
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Download dist.zip
+        uses: actions/download-artifact@v4
+        with:
+          name: dist.zip
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./dist.zip
+          asset_name: dist.zip
+          asset_content_type: application/zip
+
+  publish-github:
+    name: 📦 Publish to GitHub Packages
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Write Release Version 🔢
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          echo Version: $VERSION
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: package.json info
+        id: info
+        uses: jaywcjlove/github-action-package@main
+        with:
+          data: |
+            {
+              "name": "@mustafagenc/kurlar"
+            }
+
+      - uses: actions/setup-node@v4
+        with:
+          always-auth: true
+          node-version: 'node'
+          registry-url: https://npm.pkg.github.com/
+      - name: Update Package Version 🔢
+        run: |
+                echo "Updating package.json version to ${VERSION}"
+                yarn version --new-version "${VERSION}" --no-git-tag-version
+      - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
+      
+      - name: Build 🔨
+        run: yarn && yarn run build
+
+      - name: Publish ✨
+        run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+  publish-npm:
+    name: 📦 Publish to npmjs
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Write Release Version 🔢
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          echo Version: $VERSION
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - uses: actions/setup-node@v4
+        with:
+          always-auth: true
+          node-version: 'node'
+          registry-url: https://registry.npmjs.org/
+      - name: Update Package Version 🔢
+        run: |
+                echo "Updating package.json version to ${VERSION}"
+                yarn version --new-version "${VERSION}" --no-git-tag-version
+      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
+      - name: Build 🔨
+        run: yarn && yarn run build
+
+      - name: Publish ✨
+        run: yarn publish --access public --no-git-tag-version
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

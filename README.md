@@ -1,4 +1,5 @@
-[![Support Palestine](https://raw.githubusercontent.com/Safouene1/support-palestine-banner/master/banner-support.svg)](https://github.com/Safouene1/support-palestine-banner/blob/master/Markdown-pages/Support.md)
+[![Support Palestine](https://raw.githubusercontent.com/mustafagenc/palestine/refs/heads/main/banners/b-2.svg)](https://github.com/mustafagenc/palestine/blob/main/Support.md)
+
 
 [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://github.com/sponsors/mustafagenc) ![GitHub package.json version](https://img.shields.io/github/package-json/v/mustafagenc/kurlar) [![NPM Version](https://img.shields.io/npm/v/%40mustafagenc%2Fkurlar)](https://www.npmjs.com/package/kurlar) [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/mustafagenc/kurlar)](https://www.codefactor.io/repository/github/mustafagenc/kurlar) [![GitHub Repo stars](https://img.shields.io/github/stars/mustafagenc/kurlar)](https://github.com/mustafagenc/kurlar/stargazers)
 

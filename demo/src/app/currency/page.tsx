@@ -3,6 +3,8 @@ import { Suspense } from "react";
 import CurrencyForm from "./components/currency-form";
 import CurrencyResult from "./components/currency-result";
 import { CurrencyType } from "@/lib/types";
+import Code from "./code";
+import { Button } from "@/components/ui/button";
 
 type CurrencyPageProps = {
   searchParams: Promise<{
@@ -37,6 +39,9 @@ export default async function Page({ searchParams }: CurrencyPageProps) {
         <CurrencyForm initialCurrency={currency} initialDate={date} />
         <div className="mt-4">
           <CurrencyResult data={result || undefined} currency={currency} />
+        </div>
+        <div className="mt-4">
+          <Code />
         </div>
       </Suspense>
     </div>

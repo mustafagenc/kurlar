@@ -13,7 +13,7 @@ export default function CurrencyResult({ data, currency }: CurrencyResultProps) 
   if (currency && !data) {
     resultText = "Veri alınırken bir hata oluştu. Lütfen tekrar deneyin.";
   } else if (data) {
-    resultText = `1 ${data.CurrencyCode} = ${data.ForexBuying} TL, ${data.BanknoteBuying} TL`;
+    resultText = `1 ${data.CurrencyCode} = Alış: ${data.ForexBuying} TL, Satış: ${data.BanknoteBuying} TL`;
   }
   
   return (

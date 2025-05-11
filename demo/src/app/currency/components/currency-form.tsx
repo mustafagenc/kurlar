@@ -24,29 +24,7 @@ import {
 } from "@/components/ui/select";
 
 import { currencyTypes } from "@/lib/constants";
-
-type CurrencyType =
-  | "USD"
-  | "AUD"
-  | "DKK"
-  | "EUR"
-  | "GBP"
-  | "CHF"
-  | "SEK"
-  | "CAD"
-  | "KWD"
-  | "NOK"
-  | "SAR"
-  | "JPY"
-  | "BGN"
-  | "RON"
-  | "RUB"
-  | "CNY"
-  | "PKR"
-  | "QAR"
-  | "KRW"
-  | "AZN"
-  | "AED";
+import { CurrencyType } from "@/lib/types";
 
 interface CurrencyFormProps {
   initialCurrency?: string;

@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { columns } from "./columns";
 import CurrencyTableSkeleton from "./components/currency-table-skeleton";
 import { DataTable } from "./data-table";
+import Code from "./code";
 
 export default async function Page() {
 	const data = await fetchAllCurrencies();
@@ -16,6 +17,7 @@ export default async function Page() {
 		<div className="m-auto w-3xl my-10">
 			<Suspense fallback={<CurrencyTableSkeleton />}>
 				<DataTable columns={columns} data={data} />
+				<Code />
 			</Suspense>
 		</div>
 	);

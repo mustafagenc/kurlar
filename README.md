@@ -1,10 +1,8 @@
+# Kurlar
+
 [![Support Palestine](https://raw.githubusercontent.com/mustafagenc/palestine/refs/heads/main/banners/b-2.svg)](https://github.com/mustafagenc/palestine/blob/main/Support.md)
 
-
 [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://github.com/sponsors/mustafagenc) ![GitHub package.json version](https://img.shields.io/github/package-json/v/mustafagenc/kurlar) [![NPM Version](https://img.shields.io/npm/v/%40mustafagenc%2Fkurlar)](https://www.npmjs.com/package/kurlar) [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/mustafagenc/kurlar)](https://www.codefactor.io/repository/github/mustafagenc/kurlar) [![GitHub Repo stars](https://img.shields.io/github/stars/mustafagenc/kurlar)](https://github.com/mustafagenc/kurlar/stargazers)
-
-
-# Kurlar
 
 Türkiye Cumhuriyet Merkez Bankası (TCMB) tarafından yayınlanan döviz kurlarını kolayca çekmenizi sağlayan bir TypeScript kütüphanesi.
 
@@ -39,6 +37,7 @@ import { fetchCurrency } from "kurlar";
   console.log(result);
 })();
 ```
+
 ```ts
 import { fetchAllCurrencies } from "kurlar";
 
@@ -105,13 +104,6 @@ Katkıda bulunmak isterseniz, lütfen bir pull request gönderin veya bir issue 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/eatalay13"><img src="https://avatars.githubusercontent.com/u/30194127?v=4?s=100" width="100px;" alt="Emrah Atalay"/><br /><sub><b>Emrah Atalay</b></sub></a><br /><a href="#code-eatalay13" title="Code">💻</a> <a href="#review-eatalay13" title="Reviewed Pull Requests">👀</a></td>
-    </tr>
-  </tbody>
-</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->

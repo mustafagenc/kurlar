@@ -36,7 +36,7 @@ export default async function Page({ searchParams }: CurrencyPageProps) {
       <Suspense fallback={<div>Yükleniyor...</div>}>
         <CurrencyForm initialCurrency={currency} initialDate={date} />
         <div className="mt-4">
-          <CurrencyResult data={result} currency={currency} />
+          <CurrencyResult data={result || undefined} currency={currency} />
         </div>
       </Suspense>
     </div>

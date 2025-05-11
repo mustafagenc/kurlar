@@ -3,7 +3,7 @@ import { TCMBResponseType } from "@/lib/types";
 import { Terminal } from "lucide-react";
 
 interface CurrencyResultProps {
-  data: TCMBResponseType;
+  data?: TCMBResponseType;
   currency?: string;
 }
 

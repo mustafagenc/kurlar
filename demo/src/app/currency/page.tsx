@@ -1,8 +1,8 @@
 import { fetchCurrency } from "kurlar";
 import { Suspense } from "react";
-import { CurrencyType } from "./columns";
 import CurrencyForm from "./components/currency-form";
 import CurrencyResult from "./components/currency-result";
+import { CurrencyType } from "@/lib/types";
 
 type CurrencyPageProps = {
   searchParams: Promise<{
@@ -36,7 +36,7 @@ export default async function Page({ searchParams }: CurrencyPageProps) {
       <Suspense fallback={<div>Yükleniyor...</div>}>
         <CurrencyForm initialCurrency={currency} initialDate={date} />
         <div className="mt-4">
-          <CurrencyResult data={result} currency={currency} date={date} />
+          <CurrencyResult data={result} currency={currency} />
         </div>
       </Suspense>
     </div>

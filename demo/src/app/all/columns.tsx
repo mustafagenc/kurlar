@@ -4,16 +4,7 @@ import type { ColumnDef } from "@tanstack/react-table";
 import { IconArrowsUpDown } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-
-export type TCMBResponseType = {
-	Unit: number;
-	CurrencyName: string;
-	CurrencyCode: string;
-	ForexBuying: number;
-	ForexSelling: number;
-	BanknoteBuying: number;
-	BanknoteSelling: number;
-};
+import { TCMBResponseType } from "@/lib/types";
 
 export const columns: ColumnDef<TCMBResponseType>[] = [
 	{

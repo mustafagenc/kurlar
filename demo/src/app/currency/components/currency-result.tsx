@@ -1,12 +1,13 @@
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { TCMBResponseType } from "@/lib/types";
+import { Terminal } from "lucide-react";
 
 interface CurrencyResultProps {
-  data: any;
+  data: TCMBResponseType;
   currency?: string;
-  date?: string;
 }
 
-export default function CurrencyResult({ data, currency, date }: CurrencyResultProps) {
+export default function CurrencyResult({ data, currency }: CurrencyResultProps) {
   let resultText = "Lütfen para birimi seçin";
   
   if (currency && !data) {
@@ -17,7 +18,8 @@ export default function CurrencyResult({ data, currency, date }: CurrencyResultP
   
   return (
     <Alert>
-      <AlertTitle>{date || "Bugün"}</AlertTitle>
+      <Terminal className="h-4 w-4" />
+      <AlertTitle>Sonuç</AlertTitle>
       <AlertDescription>{resultText}</AlertDescription>
     </Alert>
   );

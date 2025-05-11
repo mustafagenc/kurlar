@@ -100,6 +100,17 @@ yarn test:coverage
 
 Katkıda bulunmak isterseniz, lütfen bir pull request gönderin veya bir issue açın.
 
+## Katkıda Bulunanlar
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
 ## Lisans
 
 Bu proje [MIT](LICENSE) ile lisanslanmıştır.

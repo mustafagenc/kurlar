@@ -114,8 +114,25 @@ export default function Page() {
           Katkıda Bulunma
         </h3>
         <p>
-          Katkıda bulunmak isterseniz, lütfen bir pull request gönderin veya bir
-          issue açın.
+          Katkıda bulunmak isterseniz, lütfen bir{" "}
+          <Link
+            href={"https://github.com/mustafagenc/kurlar/pulls"}
+            className="text-blue-500 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            pull request
+          </Link>{" "}
+          gönderin veya bir{" "}
+          <Link
+            href={"https://github.com/mustafagenc/kurlar/issues"}
+            className="text-blue-500 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            issue
+          </Link>{" "}
+          açın.
         </p>
       </div>
       <div>

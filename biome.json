@@ -16,7 +16,8 @@
 			"coverage",
 			"build",
 			"out",
-			"lib"
+			"lib",
+			"demo"
 		]
 	},
 	"formatter": {

@@ -9,6 +9,7 @@ permissions:
   packages: write
   id-token: write
   actions: write
+  pull-requests: write
 jobs:
   test:
     name: ✅ Test 
@@ -19,6 +20,7 @@ jobs:
       packages: write
       id-token: write
       actions: write
+      pull-requests: write
     steps:
       - name: Checkout 📑
         uses: actions/checkout@v4
@@ -48,6 +50,7 @@ jobs:
       packages: write
       id-token: write
       actions: write
+      pull-requests: write
     steps:
       - name: Write Release Version 🔢
         run: |
@@ -87,11 +90,11 @@ jobs:
               git add .
               git diff --quiet || git commit -m "Update package.json to version ${VERSION}"
       
-      - name: Push Changes 💾
-        run: |
-             git push origin HEAD:main
-        env:
-             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
 
       - name: Zip dist & node_modules
         run: zip -9qry "dist.zip" "./" -i "node_modules/*" -i "dist/*"

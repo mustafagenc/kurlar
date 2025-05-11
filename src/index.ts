@@ -13,15 +13,7 @@ async function fetchAllCurrencies(
 	const currencyResponses: TCMBResponseType[] = [];
 
 	try {
-		const response = await axios.get(apiUrl.url, {
-			headers: {
-				Accept:
-					"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-				"Accept-Language": "en-US,en;q=0.8,tr;q=0.6",
-				"Accept-Charset": apiUrl.encoding,
-			},
-		});
-
+		const response = await axios.get(apiUrl.url);
 		const result = XMLValidator.validate(response.data);
 
 		if (result !== true) {

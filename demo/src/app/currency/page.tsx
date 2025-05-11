@@ -83,7 +83,7 @@ export default function Page() {
 		if (currency) {
 			console.log("currency", currency);
 			console.log("date", date);
-			fetchCurrency({ currency: currency, date: new Date(date) })
+			fetchCurrency({ currency: currency})
 				.then((res) => {
 					setResult(
 						`1 ${res?.CurrencyCode} = ${res?.ForexBuying} TL, ${res?.BanknoteBuying} TL`,

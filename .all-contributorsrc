@@ -1,4 +1,22 @@
 {
-	"projectName": "kurlar",
-	"projectOwner": "mustafagenc"
+  "projectName": "kurlar",
+  "projectOwner": "mustafagenc",
+  "files": [
+    "README.md"
+  ],
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 7,
+  "contributors": [
+    {
+      "login": "eatalay13",
+      "name": "Emrah Atalay",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30194127?v=4",
+      "profile": "https://github.com/eatalay13",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    }
+  ]
 }

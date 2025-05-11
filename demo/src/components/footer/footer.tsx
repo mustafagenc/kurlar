@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import IconNextjs from "../icons/nextjs";
-import { IconBrandVercel } from "@tabler/icons-react";
+import { IconBrandVercel, IconBrandNextjs } from "@tabler/icons-react";
 
 export const Footer = () => {
   return (
@@ -14,7 +13,7 @@ export const Footer = () => {
             rel="nofollow"
             className="items-center flex gap-1 dark:hover:text-white"
           >
-            Built with <IconNextjs className="size-4 inline" />
+            Built with <IconBrandNextjs className="size-4 inline" />
           </Link>
           <Link
             href="https://www.vercel.com"
@@ -51,10 +50,7 @@ export const Footer = () => {
             target="_blank"
             rel="nofollow"
           >
-            <img
-              src="https://img.shields.io/npm/v/%40mustafagenc%2Fkurlar?color=green&style=flat"
-              alt="alt"
-            />
+            <img src="https://img.shields.io/npm/v/kurlar" alt="alt" />
           </Link>
           <Link
             href="https://github.com/mustafagenc/kurlar/stargazers"

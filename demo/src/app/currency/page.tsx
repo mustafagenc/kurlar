@@ -4,7 +4,6 @@ import CurrencyForm from "./components/currency-form";
 import CurrencyResult from "./components/currency-result";
 import { CurrencyType } from "@/lib/types";
 import Code from "./code";
-import { Button } from "@/components/ui/button";
 
 type CurrencyPageProps = {
   searchParams: Promise<{

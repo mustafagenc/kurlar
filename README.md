@@ -105,6 +105,13 @@ Katkıda bulunmak isterseniz, lütfen bir pull request gönderin veya bir issue 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/eatalay13"><img src="https://avatars.githubusercontent.com/u/30194127?v=4?s=100" width="100px;" alt="Emrah Atalay"/><br /><sub><b>Emrah Atalay</b></sub></a><br /><a href="#code-eatalay13" title="Code">💻</a> <a href="#review-eatalay13" title="Reviewed Pull Requests">👀</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->

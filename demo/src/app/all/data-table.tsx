@@ -42,6 +42,8 @@ export function DataTable<TData, TValue>({
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   );
+  
+
   const table = useReactTable({
     data,
     columns,
@@ -59,7 +61,8 @@ export function DataTable<TData, TValue>({
 
   return (
     <div>
-      <div className="flex items-center py-4">
+      <div className="flex items-center py-4 gap-3">
+
         <Input
           placeholder="Para birimi..."
           value={

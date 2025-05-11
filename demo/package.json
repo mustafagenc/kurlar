@@ -11,6 +11,7 @@
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.14",
     "@radix-ui/react-menubar": "^1.1.14",
+    "@radix-ui/react-popover": "^1.1.13",
     "@radix-ui/react-select": "^2.2.4",
     "@radix-ui/react-slot": "^1.2.2",
     "@tabler/icons-react": "^3.31.0",
@@ -18,11 +19,13 @@
     "@types/prismjs": "^1.26.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
     "kurlar": "^1.0.1",
     "next": "15.3.2",
     "next-themes": "^0.4.6",
     "prismjs": "^1.30.0",
     "react": "^19.0.0",
+    "react-day-picker": "^8.10.1",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.2.0"
   },

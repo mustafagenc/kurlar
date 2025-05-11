@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="tr" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased  min-h-screen bg-background font-sans text-foreground transition-colors dark:bg-background/95 dark:text-foreground/95 bg-no-repeat bg-cover bg-center`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  bg-background text-foreground transition-colors dark:bg-background/95 dark:text-foreground/95`}
       >
         <ThemeProvider
           attribute="class"
@@ -38,7 +38,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main className="min-h-screen">{children}</main>
+          <main>{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

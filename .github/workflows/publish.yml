@@ -28,11 +28,18 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ github.event.repository.default_branch }}
 
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 10
+          run_install: false
+
       - name: Use Node LTS ✨
         uses: actions/setup-node@v4
         with:
           node-version: "node"
           registry-url: "https://registry.npmjs.org"
+          cache: 'pnpm'
 
       - name: Install Dependencies 📦️
         run: pnpm install
@@ -63,11 +70,18 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ github.event.repository.default_branch }}
 
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 10
+          run_install: false
+
       - name: Use Node LTS ✨
         uses: actions/setup-node@v4
         with:
           node-version: "node"
           registry-url: "https://registry.npmjs.org"
+          cache: 'pnpm'
 
       - name: Install Dependencies 📦️
         run: pnpm install
@@ -139,11 +153,19 @@ jobs:
           echo Version: $VERSION
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 10
+          run_install: false
+
       - uses: actions/setup-node@v4
         with:
           always-auth: true
           node-version: "node"
           registry-url: https://registry.npmjs.org/
+          cache: 'pnpm'
+
       - name: Update Package Version 🔢
         run: |
           echo "Updating package.json version to ${VERSION}"
@@ -183,11 +205,19 @@ jobs:
 
       - run: echo "name - ${{ steps.info.outputs.name }}"
 
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 10
+          run_install: false
+
       - uses: actions/setup-node@v4
         with:
           always-auth: true
           node-version: "node"
           registry-url: https://npm.pkg.github.com/
+          cache: 'pnpm'
+
       - name: Update Package Version 🔢
         run: |
           echo "Updating package.json version to ${VERSION}"
@@ -219,11 +249,18 @@ jobs:
           ref: ${{ github.event.repository.default_branch }}
           fetch-depth: 0
 
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 10
+          run_install: false
+
       - name: Use Node LTS ✨
         uses: actions/setup-node@v4
         with:
           node-version: "node"
           registry-url: "https://registry.npmjs.org"
+          cache: 'pnpm'
 
       - name: Install Dependencies 📦️
         run: pnpm install

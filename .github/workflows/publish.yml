@@ -81,21 +81,6 @@ jobs:
       - name: Build 🔨
         run: yarn run build
 
-      - name: Configure Git 🔧
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@users.noreply.github.com"
-
-      - run: |
-          git add .
-          git diff --quiet || git commit -m "Update package.json to version ${VERSION}"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-
       - name: Zip dist & node_modules
         run: zip -9qry "dist.zip" "./" -i "node_modules/*" -i "dist/*"
 
@@ -216,3 +201,49 @@ jobs:
         run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+  update-version:
+    name: 🔢 Write Release Version
+    needs: [release, publish-npm, publish-github]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Write Release Version 🔢
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          echo Version: $VERSION
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Checkout 📑
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+
+      - name: Use Node LTS ✨
+        uses: actions/setup-node@v4
+        with:
+          node-version: "node"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install Dependencies 📦️
+        run: yarn
+
+      - name: Update Package Version 🔢
+        run: |
+          echo "Updating package.json version to ${VERSION}"
+          yarn version --new-version "${VERSION}" --no-git-tag-version
+
+      - name: Configure Git 🔧
+        run: |
+            git config --global user.name "github-actions"
+            git config --global user.email "github-actions@users.noreply.github.com"
+  
+      - run: |
+            git commit -a -m "Update package.json to version ${VERSION}"
+  
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}

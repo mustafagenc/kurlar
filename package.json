@@ -13,8 +13,8 @@
     "run-index": "ts-node src/index.ts",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "lint": "eslint . ",
-    "lint:fix": "eslint . --fix ",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "lint:fix": "eslint \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --fix ",
     "prettier": "pnpm exec prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "repository": "github:mustafagenc/kurlar",

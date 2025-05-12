@@ -7,7 +7,7 @@ import { getApiUrl } from "./helpers";
 /// @param date - The date for which to fetch exchange rates
 /// @returns An array of all exchange rates or null if no data is found
 async function fetchAllCurrencies(
-  date?: Date,
+  date?: Date
 ): Promise<TCMBResponseType[] | null> {
   const apiUrl = getApiUrl({ date: date });
   const currencyResponses: TCMBResponseType[] = [];
@@ -72,7 +72,7 @@ async function fetchCurrency({
   }
 
   const currencyResponse = allCurrencies.find(
-    (item) => item.CurrencyCode === currency,
+    (item) => item.CurrencyCode === currency
   );
 
   return currencyResponse || null;

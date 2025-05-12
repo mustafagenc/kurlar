@@ -2,6 +2,8 @@
   "projectName": "kurlar",
   "projectOwner": "mustafagenc",
   "files": ["README.md"],
+  "imageSize": 50,
+  "contributorsSortAlphabetically": true,
   "commitType": "docs",
   "commitConvention": "angular",
   "contributorsPerLine": 7,

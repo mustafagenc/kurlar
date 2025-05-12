@@ -87,7 +87,7 @@ jobs:
       - name: Update Package Version 🔢
         run: |
           echo "Updating package.json version to ${VERSION}"
-          pnpm version --new-version "${VERSION}" --no-git-tag-version
+          pnpm version --new-version "${VERSION}"
 
       - name: Build 🔨
         run: pnpm run build
@@ -166,13 +166,13 @@ jobs:
       - name: Update Package Version 🔢
         run: |
           echo "Updating package.json version to ${VERSION}"
-          pnpm version --new-version "${VERSION}" --no-git-tag-version
+          pnpm version --new-version "${VERSION}"
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       - name: Build 🔨
         run: pnpm install && pnpm run build
 
       - name: Publish ✨
-        run: pnpm publish --access public --no-git-tag-version
+        run: pnpm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
@@ -217,7 +217,7 @@ jobs:
       - name: Update Package Version 🔢
         run: |
           echo "Updating package.json version to ${VERSION}"
-          pnpm version --new-version "${VERSION}" --no-git-tag-version
+          pnpm version --new-version "${VERSION}"
       - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
       - name: Build 🔨
         run: pnpm install && pnpm run build
@@ -263,7 +263,7 @@ jobs:
       - name: Update Package Version 🔢
         run: |
           echo "Updating package.json version to ${VERSION}"
-          pnpm version --new-version "${VERSION}" --no-git-tag-version
+          pnpm version --new-version "${VERSION}"
 
       - name: Configure Git 🔧
         run: |

@@ -2,7 +2,8 @@
 
 [![Support Palestine](https://raw.githubusercontent.com/mustafagenc/palestine/refs/heads/main/banners/b-2.svg)](https://github.com/mustafagenc/palestine/blob/main/Support.md)
 
-[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://github.com/sponsors/mustafagenc) [![Publish Package](https://github.com/mustafagenc/kurlar/actions/workflows/publish.yml/badge.svg)](https://github.com/mustafagenc/kurlar/actions/workflows/publish.yml) [![GitHub package.json version](https://img.shields.io/github/package-json/v/mustafagenc/kurlar)](https://github.com/mustafagenc/kurlar/pkgs/npm/kurlar) [![NPM Version](https://img.shields.io/npm/v/kurlar)](https://www.npmjs.com/package/kurlar) [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/mustafagenc/kurlar)](https://www.codefactor.io/repository/github/mustafagenc/kurlar) [![GitHub Repo stars](https://img.shields.io/github/stars/mustafagenc/kurlar)](https://github.com/mustafagenc/kurlar/stargazers)
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee&style=flat)](https://github.com/sponsors/mustafagenc) [![GitHub package.json version](https://img.shields.io/github/package-json/version/mustafagenc/kurlar?style=flat)](https://github.com/mustafagenc/kurlar/pkgs/npm/kurlar) [![NPM Version](https://img.shields.io/npm/v/kurlar?style=flat)](https://www.npmjs.com/package/kurlar) ![npm bundle size](https://img.shields.io/bundlephobia/min/kurlar?style=flat)
+[![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/mustafagenc/kurlar?style=flat)](https://www.codefactor.io/repository/github/mustafagenc/kurlar) [![GitHub Repo stars](https://img.shields.io/github/stars/mustafagenc/kurlar)](https://github.com/mustafagenc/kurlar/stargazers)
 
 Türkiye Cumhuriyet Merkez Bankası (TCMB) tarafından yayınlanan döviz kurlarını kolayca çekmenizi sağlayan bir TypeScript kütüphanesi.
 
@@ -107,7 +108,6 @@ Katkıda bulunmak isterseniz, lütfen bir pull request gönderin veya bir issue 
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/mustafagenc"><img src="https://avatars.githubusercontent.com/u/421884?v=4?s=100" width="100px;" alt="Mustafa Genç"/><br /><sub><b>Mustafa Genç</b></sub></a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/eatalay13"><img src="https://avatars.githubusercontent.com/u/30194127?v=4?s=100" width="100px;" alt="Emrah Atalay"/><br /><sub><b>Emrah Atalay</b></sub></a></td>
     </tr>
   </tbody>

@@ -31,7 +31,6 @@ jobs:
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          version: 10
           run_install: false
 
       - name: Use Node LTS ✨
@@ -73,7 +72,6 @@ jobs:
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          version: 10
           run_install: false
 
       - name: Use Node LTS ✨
@@ -156,7 +154,6 @@ jobs:
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          version: 10
           run_install: false
 
       - uses: actions/setup-node@v4
@@ -208,7 +205,6 @@ jobs:
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          version: 10
           run_install: false
 
       - uses: actions/setup-node@v4
@@ -252,7 +248,6 @@ jobs:
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          version: 10
           run_install: false
 
       - name: Use Node LTS ✨

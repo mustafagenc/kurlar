@@ -18,19 +18,35 @@ export default function CurrencyTableSkeleton() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead><Skeleton className="h-6 w-full" /></TableHead>
-              <TableHead><Skeleton className="h-6 w-full" /></TableHead>
-              <TableHead><Skeleton className="h-6 w-full" /></TableHead>
-              <TableHead><Skeleton className="h-6 w-full" /></TableHead>
+              <TableHead>
+                <Skeleton className="h-6 w-full" />
+              </TableHead>
+              <TableHead>
+                <Skeleton className="h-6 w-full" />
+              </TableHead>
+              <TableHead>
+                <Skeleton className="h-6 w-full" />
+              </TableHead>
+              <TableHead>
+                <Skeleton className="h-6 w-full" />
+              </TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {Array.from({ length: 10 }).map((_, index) => (
               <TableRow key={index}>
-                <TableCell><Skeleton className="h-6 w-full" /></TableCell>
-                <TableCell><Skeleton className="h-6 w-full" /></TableCell>
-                <TableCell><Skeleton className="h-6 w-full" /></TableCell>
-                <TableCell><Skeleton className="h-6 w-full" /></TableCell>
+                <TableCell>
+                  <Skeleton className="h-6 w-full" />
+                </TableCell>
+                <TableCell>
+                  <Skeleton className="h-6 w-full" />
+                </TableCell>
+                <TableCell>
+                  <Skeleton className="h-6 w-full" />
+                </TableCell>
+                <TableCell>
+                  <Skeleton className="h-6 w-full" />
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -41,4 +57,4 @@ export default function CurrencyTableSkeleton() {
       </div>
     </div>
   );
-} 
+}

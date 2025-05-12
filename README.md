@@ -107,7 +107,8 @@ Katkıda bulunmak isterseniz, lütfen bir pull request gönderin veya bir issue 
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/eatalay13"><img src="https://avatars.githubusercontent.com/u/30194127?v=4?s=100" width="100px;" alt="Emrah Atalay"/><br /><sub><b>Emrah Atalay</b></sub></a><br /><a href="#code-eatalay13" title="Code">💻</a> <a href="#review-eatalay13" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/mustafagenc"><img src="https://avatars.githubusercontent.com/u/421884?v=4?s=100" width="100px;" alt="Mustafa Genç"/><br /><sub><b>Mustafa Genç</b></sub></a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/eatalay13"><img src="https://avatars.githubusercontent.com/u/30194127?v=4?s=100" width="100px;" alt="Emrah Atalay"/><br /><sub><b>Emrah Atalay</b></sub></a></td>
     </tr>
   </tbody>
 </table>

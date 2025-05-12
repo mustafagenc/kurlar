@@ -7,15 +7,18 @@ interface CurrencyResultProps {
   currency?: string;
 }
 
-export default function CurrencyResult({ data, currency }: CurrencyResultProps) {
+export default function CurrencyResult({
+  data,
+  currency,
+}: CurrencyResultProps) {
   let resultText = "Lütfen para birimi seçin";
-  
+
   if (currency && !data) {
     resultText = "Veri alınırken bir hata oluştu. Lütfen tekrar deneyin.";
   } else if (data) {
     resultText = `1 ${data.CurrencyCode} = Alış: ${data.ForexBuying} TL, Satış: ${data.BanknoteBuying} TL`;
   }
-  
+
   return (
     <Alert>
       <Terminal className="h-4 w-4" />
@@ -23,4 +26,4 @@ export default function CurrencyResult({ data, currency }: CurrencyResultProps) 
       <AlertDescription>{resultText}</AlertDescription>
     </Alert>
   );
-} 
+}

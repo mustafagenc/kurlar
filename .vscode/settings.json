@@ -1,47 +1,9 @@
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "biomejs.biome",
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
   },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
   "files.associations": {
     "*.mdx": "markdown"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "cSpell.words": [
-    "Bankası",
-    "Bulten",
-    "çekmenizi",
-    "Cumhuriyet",
-    "döviz",
-    "Forex",
-    "Genç",
-    "Isim",
-    "kolayca",
-    "kurlar",
-    "kurlarını",
-    "kütüphane",
-    "Merkez",
-    "Mustafa",
-    "sağlayan",
-    "tarafından",
-    "Tarih",
-    "TCMB",
-    "Türkiye",
-    "yayınlanan"
-  ],
-  "[json]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
   }
 }

@@ -2,7 +2,7 @@ name: Publish Package to npmjs
 on:
   push:
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+      - "v[0-9]+.[0-9]+.[0-9]+"
 permissions:
   contents: write
   pages: write
@@ -12,7 +12,7 @@ permissions:
   pull-requests: write
 jobs:
   test:
-    name: ✅ Test 
+    name: ✅ Test
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -31,7 +31,7 @@ jobs:
       - name: Use Node LTS ✨
         uses: actions/setup-node@v4
         with:
-          node-version: 'node'
+          node-version: "node"
           registry-url: "https://registry.npmjs.org"
 
       - name: Install Dependencies 📦️
@@ -41,7 +41,7 @@ jobs:
         run: yarn run test
 
   build:
-    name: 🏷️ Build & Package 
+    name: 🏷️ Build & Package
     needs: test
     runs-on: ubuntu-latest
     permissions:
@@ -67,7 +67,7 @@ jobs:
       - name: Use Node LTS ✨
         uses: actions/setup-node@v4
         with:
-          node-version: 'node'
+          node-version: "node"
           registry-url: "https://registry.npmjs.org"
 
       - name: Install Dependencies 📦️
@@ -75,21 +75,21 @@ jobs:
 
       - name: Update Package Version 🔢
         run: |
-                echo "Updating package.json version to ${VERSION}"
-                yarn version --new-version "${VERSION}" --no-git-tag-version
+          echo "Updating package.json version to ${VERSION}"
+          yarn version --new-version "${VERSION}" --no-git-tag-version
 
       - name: Build 🔨
         run: yarn run build
 
       - name: Configure Git 🔧
         run: |
-              git config --global user.name "github-actions"
-              git config --global user.email "github-actions@users.noreply.github.com"
-    
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@users.noreply.github.com"
+
       - run: |
-              git add .
-              git diff --quiet || git commit -m "Update package.json to version ${VERSION}"
-      
+          git add .
+          git diff --quiet || git commit -m "Update package.json to version ${VERSION}"
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
@@ -106,7 +106,7 @@ jobs:
           path: dist.zip
 
   release:
-    name: 🚀 Publish Release 
+    name: 🚀 Publish Release
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -158,14 +158,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           always-auth: true
-          node-version: 'node'
+          node-version: "node"
           registry-url: https://registry.npmjs.org/
       - name: Update Package Version 🔢
         run: |
-                echo "Updating package.json version to ${VERSION}"
-                yarn version --new-version "${VERSION}" --no-git-tag-version
+          echo "Updating package.json version to ${VERSION}"
+          yarn version --new-version "${VERSION}" --no-git-tag-version
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-
       - name: Build 🔨
         run: yarn && yarn run build
 
@@ -203,14 +202,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           always-auth: true
-          node-version: 'node'
+          node-version: "node"
           registry-url: https://npm.pkg.github.com/
       - name: Update Package Version 🔢
         run: |
-                echo "Updating package.json version to ${VERSION}"
-                yarn version --new-version "${VERSION}" --no-git-tag-version
+          echo "Updating package.json version to ${VERSION}"
+          yarn version --new-version "${VERSION}" --no-git-tag-version
       - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
-      
       - name: Build 🔨
         run: yarn && yarn run build
 

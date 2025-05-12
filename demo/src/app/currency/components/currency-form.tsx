@@ -10,17 +10,17 @@ import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 
 import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
 } from "@/components/ui/popover";
 
 import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
 
 import { currencyTypes } from "@/lib/constants";
@@ -31,22 +31,25 @@ interface CurrencyFormProps {
   initialDate?: string;
 }
 
-export default function CurrencyForm({ initialCurrency, initialDate }: CurrencyFormProps) {
+export default function CurrencyForm({
+  initialCurrency,
+  initialDate,
+}: CurrencyFormProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  
+
   const [date, setDate] = React.useState<Date | undefined>(
-    initialDate 
-      ? new Date(initialDate.split(".").reverse().join("-")) 
-      : new Date()
+    initialDate
+      ? new Date(initialDate.split(".").reverse().join("-"))
+      : new Date(),
   );
-  
+
   const [inputValue, setInputValue] = React.useState(
     initialDate || format(new Date(), "dd.MM.yyyy"),
   );
-  
+
   const [currency, setCurrency] = React.useState<CurrencyType | undefined>(
-    initialCurrency as CurrencyType || undefined
+    (initialCurrency as CurrencyType) || undefined,
   );
 
   const handleDayPickerSelect = (date: Date | undefined) => {
@@ -56,7 +59,7 @@ export default function CurrencyForm({ initialCurrency, initialDate }: CurrencyF
     } else {
       setDate(date);
       setInputValue(format(date, "dd.MM.yyyy"));
-      
+
       if (currency) {
         updateURL(currency, format(date, "dd.MM.yyyy"));
       }
@@ -65,17 +68,17 @@ export default function CurrencyForm({ initialCurrency, initialDate }: CurrencyF
 
   function handleCurrencyCodeSelect(value: CurrencyType): void {
     setCurrency(value);
-    
+
     if (date) {
       updateURL(value, inputValue);
     }
   }
-  
+
   function updateURL(selectedCurrency: string, selectedDate: string) {
     const params = new URLSearchParams(searchParams.toString());
     params.set("currency", selectedCurrency);
     params.set("date", selectedDate);
-    
+
     router.push(`?${params.toString()}`);
   }
 
@@ -123,4 +126,4 @@ export default function CurrencyForm({ initialCurrency, initialDate }: CurrencyF
       </Popover>
     </div>
   );
-} 
+}

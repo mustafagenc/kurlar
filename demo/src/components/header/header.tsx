@@ -5,7 +5,7 @@ import { Menu } from "./menu";
 import { IconCoffee, IconBrandGithub } from "@tabler/icons-react";
 
 export const Header = () => {
-	return (
+  return (
     <header className="border-grid sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="flex h-14 m-auto items-center w-3xl">
         <div className=" flex h-14 items-center gap-2 md:gap-4 w-full">

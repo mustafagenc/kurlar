@@ -13,7 +13,7 @@ export default function Page() {
     Prism.highlightAll();
   }, []);
 
-	return (
+  return (
     <div className="m-auto w-3xl my-10">
       <Link
         href="https://github.com/mustafagenc/palestine/blob/main/Support.md"

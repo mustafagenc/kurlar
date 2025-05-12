@@ -7,18 +7,18 @@ import { DataTable } from "./data-table";
 import Code from "./code";
 
 export default async function Page() {
-	const data = await fetchAllCurrencies();
+  const data = await fetchAllCurrencies();
 
-	if (!data) {
-		return <div className="m-auto w-3xl my-10">Kayıt yok</div>;
-	}
+  if (!data) {
+    return <div className="m-auto w-3xl my-10">Kayıt yok</div>;
+  }
 
-	return (
-		<div className="m-auto w-3xl my-10">
-			<Suspense fallback={<CurrencyTableSkeleton />}>
-				<DataTable columns={columns} data={data} />
-				<Code />
-			</Suspense>
-		</div>
-	);
+  return (
+    <div className="m-auto w-3xl my-10">
+      <Suspense fallback={<CurrencyTableSkeleton />}>
+        <DataTable columns={columns} data={data} />
+        <Code />
+      </Suspense>
+    </div>
+  );
 }

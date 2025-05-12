@@ -6,10 +6,9 @@ import "prismjs/components/prism-typescript";
 import { useEffect } from "react";
 
 export default function Code() {
-
-    useEffect(() => {
-      Prism.highlightAll();
-    }, []);
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
 
   return (
     <div className="m-auto w-3xl my-10">
@@ -39,7 +38,7 @@ export default function Code() {
         className="mt-4 cursor-pointer"
         onClick={() =>
           window.open(
-            "https://github.com/mustafagenc/kurlar/tree/main/demo/src/app/all"
+            "https://github.com/mustafagenc/kurlar/tree/main/demo/src/app/all",
           )
         }
       >

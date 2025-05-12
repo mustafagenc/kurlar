@@ -35,10 +35,9 @@ jobs:
           registry-url: "https://registry.npmjs.org"
 
       - name: Install Dependencies 📦️
-        run: yarn
-
+        run: pnpm install
       - name: Run Tests ✔️
-        run: yarn run test
+        run: pnpm run test
 
   build:
     name: 🏷️ Build & Package
@@ -71,15 +70,15 @@ jobs:
           registry-url: "https://registry.npmjs.org"
 
       - name: Install Dependencies 📦️
-        run: yarn
+        run: pnpm install
 
       - name: Update Package Version 🔢
         run: |
           echo "Updating package.json version to ${VERSION}"
-          yarn version --new-version "${VERSION}" --no-git-tag-version
+          pnpm version --new-version "${VERSION}" --no-git-tag-version
 
       - name: Build 🔨
-        run: yarn run build
+        run: pnpm run build
 
       - name: Zip dist & node_modules
         run: zip -9qry "dist.zip" "./" -i "node_modules/*" -i "dist/*"
@@ -148,13 +147,13 @@ jobs:
       - name: Update Package Version 🔢
         run: |
           echo "Updating package.json version to ${VERSION}"
-          yarn version --new-version "${VERSION}" --no-git-tag-version
+          pnpm version --new-version "${VERSION}" --no-git-tag-version
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       - name: Build 🔨
-        run: yarn && yarn run build
+        run: pnpm install && pnpm run build
 
       - name: Publish ✨
-        run: yarn publish --access public --no-git-tag-version
+        run: pnpm publish --access public --no-git-tag-version
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
@@ -192,13 +191,13 @@ jobs:
       - name: Update Package Version 🔢
         run: |
           echo "Updating package.json version to ${VERSION}"
-          yarn version --new-version "${VERSION}" --no-git-tag-version
+          pnpm version --new-version "${VERSION}" --no-git-tag-version
       - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
       - name: Build 🔨
-        run: yarn && yarn run build
+        run: pnpm install && pnpm run build
 
       - name: Publish ✨
-        run: yarn publish
+        run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -227,12 +226,12 @@ jobs:
           registry-url: "https://registry.npmjs.org"
 
       - name: Install Dependencies 📦️
-        run: yarn
+        run: pnpm install
 
       - name: Update Package Version 🔢
         run: |
           echo "Updating package.json version to ${VERSION}"
-          yarn version --new-version "${VERSION}" --no-git-tag-version
+          pnpm version --new-version "${VERSION}" --no-git-tag-version
 
       - name: Configure Git 🔧
         run: |

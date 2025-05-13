@@ -26,22 +26,12 @@ export const Footer = () => {
         </div>
         <div className="text-sm text-muted-foreground flex gap-2">
           <Link
-            href="https://www.codefactor.io/repository/github/mustafagenc/kurlar"
-            target="_blank"
-            rel="nofollow"
-          >
-            <img
-              src="https://img.shields.io/codefactor/grade/github/mustafagenc/kurlar"
-              alt="alt"
-            />
-          </Link>
-          <Link
             href="https://github.com/mustafagenc/kurlar/pkgs/npm/kurlar"
             target="_blank"
             rel="nofollow"
           >
             <img
-              src="https://img.shields.io/github/package-json/v/mustafagenc/kurlar"
+              src="https://img.shields.io/github/package-json/v/mustafagenc/kurlar?logo=github&label=github"
               alt="alt"
             />
           </Link>
@@ -50,17 +40,7 @@ export const Footer = () => {
             target="_blank"
             rel="nofollow"
           >
-            <img src="https://img.shields.io/npm/v/kurlar" alt="alt" />
-          </Link>
-          <Link
-            href="https://github.com/mustafagenc/kurlar/stargazers"
-            target="_blank"
-            rel="nofollow"
-          >
-            <img
-              src="https://img.shields.io/github/stars/mustafagenc/kurlar"
-              alt="alt"
-            />
+            <img src="https://img.shields.io/npm/v/kurlar?logo=npm&color=%23cb0000" alt="NPM" />
           </Link>
         </div>
       </div>

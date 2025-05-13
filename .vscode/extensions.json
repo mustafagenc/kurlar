@@ -5,10 +5,23 @@
     "wix.vscode-import-cost",
     "visualstudioexptteam.vscodeintellicode",
     "stringham.move-ts",
-    "christian-kohler.path-intellisense",
-    "yoavbls.pretty-ts-errors",
     "mike-co.import-sorter",
     "pmneo.tsimporter",
-    "redhat.vscode-yaml"
+    "redhat.vscode-yaml",
+    "codescene.codescene-vscode",
+    "codecov.codecov",
+    "dbaeumer.vscode-eslint",
+    "spencerrobertson.github-action-editor",
+    "github.vscode-github-actions",
+    "github.copilot",
+    "github.copilot-chat",
+    "orta.vscode-jest",
+    "xabikos.javascriptsnippets",
+    "pkief.material-icon-theme",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense",
+    "esbenp.prettier-vscode",
+    "mikestead.dotenv",
+    "editorconfig.editorconfig"
   ]
 }

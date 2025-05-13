@@ -1,0 +1,27 @@
+name: Run Tests and Upload Coverage
+on: 
+  push
+jobs:
+  test:
+    name: Run tests and collect coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+
+      - name: Install dependencies
+        run: pnmp install
+
+      - name: Run tests
+        run: npx jest --coverage
+
+      - name: Upload results to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: mustafagenc/kurlar

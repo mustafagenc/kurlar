@@ -1,5 +1,4 @@
 export const currencyTypes = [
-  ,
   "USD",
   "AUD",
   "DKK",

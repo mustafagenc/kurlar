@@ -1,9 +1,6 @@
-# Kurlar
+# Kurlar [![GitHub package.json version](https://img.shields.io/github/package-json/version/mustafagenc/kurlar?style=flat)](https://github.com/mustafagenc/kurlar/pkgs/npm/kurlar) [![NPM Version](https://img.shields.io/npm/v/kurlar?style=flat)](https://www.npmjs.com/package/kurlar) ![npm bundle size](https://img.shields.io/bundlephobia/min/kurlar?style=flat) [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/mustafagenc/kurlar?style=flat)](https://www.codefactor.io/repository/github/mustafagenc/kurlar) [![codecov](https://codecov.io/gh/mustafagenc/kurlar/branch/main/graph/badge.svg?token=A71A2NT6TF)](https://codecov.io/gh/mustafagenc/kurlar)
 
 [![Support Palestine](https://raw.githubusercontent.com/mustafagenc/palestine/refs/heads/main/banners/b-2.svg)](https://github.com/mustafagenc/palestine/blob/main/Support.md)
-
-[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee&style=flat)](https://github.com/sponsors/mustafagenc) [![GitHub package.json version](https://img.shields.io/github/package-json/version/mustafagenc/kurlar?style=flat)](https://github.com/mustafagenc/kurlar/pkgs/npm/kurlar) [![NPM Version](https://img.shields.io/npm/v/kurlar?style=flat)](https://www.npmjs.com/package/kurlar) ![npm bundle size](https://img.shields.io/bundlephobia/min/kurlar?style=flat)
-[![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/mustafagenc/kurlar?style=flat)](https://www.codefactor.io/repository/github/mustafagenc/kurlar) [![codecov](https://codecov.io/gh/mustafagenc/kurlar/branch/main/graph/badge.svg?token=A71A2NT6TF)](https://codecov.io/gh/mustafagenc/kurlar)
 
 Türkiye Cumhuriyet Merkez Bankası (TCMB) tarafından yayınlanan döviz kurlarını kolayca çekmenizi sağlayan bir TypeScript kütüphanesi.
 
